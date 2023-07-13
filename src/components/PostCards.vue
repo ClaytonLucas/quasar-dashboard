@@ -11,7 +11,7 @@
                 <q-item-section>
                 <q-item-label>Latest Posts</q-item-label>
                 <q-item-label caption>
-                    Subhead
+                    Lorem Ipsum
                 </q-item-label>
                 </q-item-section>
             </q-item>
@@ -19,7 +19,7 @@
             <q-separator />
 
             <q-card-section horizontal  class="bg-grey-3">
-                <q-card-section>
+                <q-card-section class="row items-center">
                     <q-btn flat round color="yellow" class="bg-yellow-1" icon="lightbulb" />
                 </q-card-section>
 
@@ -28,7 +28,7 @@
                 <q-card-section >
                     <div class="text-h6">by John Doe</div>
                     <div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        {{ lorem }}
                     </div>
                 
                 <q-card-actions>
@@ -50,7 +50,7 @@
                 <q-item-section>
                 <q-item-label>Chat Options</q-item-label>
                 <q-item-label caption>
-                    Subhead
+                    Lorem Ipsum
                 </q-item-label>
                 </q-item-section>
             </q-item>
@@ -58,7 +58,7 @@
             <q-separator />
 
             <q-card-section horizontal  class="bg-grey-3">
-                <q-card-section>
+                <q-card-section class="row items-center">
                     <q-btn flat round color="yellow" class="bg-yellow-1" icon="lightbulb" />
                 </q-card-section>
 
@@ -67,7 +67,7 @@
                 <q-card-section >
                     <div class="text-h6">by John Doe</div>
                     <div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        {{ lorem }}
                     </div>
                 
                 <q-card-actions>
@@ -80,3 +80,12 @@
         </q-card>
     </div>
 </template>
+<script>
+export default {
+    setup() {
+        return{
+            lorem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+    },
+}
+</script>

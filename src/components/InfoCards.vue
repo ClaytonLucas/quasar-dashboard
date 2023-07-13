@@ -1,7 +1,7 @@
 <template>
     <div class="q-pa-md row justify-center q-gutter-md">
         <q-card class="my-card" flat bordered>
-            <q-card-section horizontal class="bg-blue-4 text-white">
+            <q-card-section horizontal class="bg-light-blue-4 text-white">
                 <q-card-actions vertical class="justify-around q-px-md">
                 <q-btn flat round color="white" icon="person_outline" />
                 
@@ -15,7 +15,7 @@
             </q-card-section>
         </q-card>
         <q-card class="my-card" flat bordered>
-            <q-card-section horizontal class="bg-blue-4 text-white">
+            <q-card-section horizontal class="bg-deep-orange-4 text-white">
                 <q-card-actions vertical class="justify-around q-px-md">
                 <q-btn flat round color="white" icon="emoji_people" />
                 
@@ -30,7 +30,7 @@
             </q-card-section>
         </q-card>
         <q-card class="my-card" flat bordered>
-            <q-card-section horizontal class="bg-blue-4 text-white">
+            <q-card-section horizontal class="bg-cyan-4 text-white">
                 <q-card-actions vertical class="justify-around q-px-md">
                 <q-btn flat round color="white" icon="contact_mail" />
                 
@@ -44,7 +44,7 @@
             </q-card-section>
         </q-card>
         <q-card class="my-card" flat bordered>
-            <q-card-section horizontal class="bg-blue-4 text-white">
+            <q-card-section horizontal class="bg-blue-grey-6 text-white">
                 <q-card-actions vertical class="justify-around q-px-md">
                 <q-btn flat round color="white" icon="bar_chart" />
                 

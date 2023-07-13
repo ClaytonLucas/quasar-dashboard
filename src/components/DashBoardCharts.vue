@@ -14,6 +14,7 @@
 <script>
 import api from "@/Services/API";
 import {onMounted, reactive} from "vue";
+
 export default {
     name:"DashBoardCharts",
     setup() {
@@ -23,11 +24,19 @@ export default {
                 },
                 
                 xaxis: {
-                    categories: []
-                }
+                    categories: [],
+                    title:{
+                        text: 'Smartphones'
+                    }
+                },
+                yaxis: {
+                    title: {
+                        text: 'Estoque quant.'
+                    }
+                },
             })
         let series= reactive ([{
-                name: 'series-1',
+                name: 'Em estoque',
                 data: []
             }]) 
         let optionsBar= reactive ({
@@ -35,7 +44,10 @@ export default {
                 id: 'vuechart-example'
                 },
                 xaxis: {
-                    categories: []
+                    categories: [],
+                    title:{
+                        text:"Rating"
+                    }
                 },
                 plotOptions: {
                 bar: {
@@ -45,7 +57,7 @@ export default {
                 }
             })
         let seriesBar = reactive ([{
-                name: 'series-1',
+                name: 'Rating',
                 data: []
             }]) 
         let seriesPie = reactive([0,0])
@@ -56,17 +68,6 @@ export default {
                 type: 'pie'
             },
             labels: ['male', 'female'],
-            responsive: [{
-              breakpoint: 480,
-              options: {
-                chart: {
-                  width: 200
-                },
-                legend: {
-                  position: 'bottom'
-                }
-              }
-            }]
         })
 
         onMounted(()=> {
@@ -86,6 +87,7 @@ export default {
             })
          
         }
+        
         let getPieData = (data) =>{
             let maleCount = 0;
             let femaleCount = 0;
@@ -106,7 +108,7 @@ export default {
             optionsBar,
             seriesBar,
             OptionsPie,
-            seriesPie,
+            seriesPie
         }
     },
 }

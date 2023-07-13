@@ -11,14 +11,11 @@
             icon="menu"
             />
             <q-input borderless  v-model="search" input-class="text-left" class="q-ml-md" label="Search...">
-                <!-- <template slot:prepend>
-                    <q-icon name="search" />
-                </template> -->
             </q-input>
             <q-space></q-space>
             <q-separator vertical/>
-            <q-btn dense round flat icon="notifications" class="q-mx-lg">
-                <q-badge color="green" floating transparent>4</q-badge>
+            <q-btn dense round flat @click="showNotif" icon="notifications" class="q-mx-lg">
+                <q-badge color="green" floating transparent>5</q-badge>
             </q-btn>
             <q-separator vertical />
             <q-avatar class="q-ml-lg">
@@ -28,15 +25,7 @@
         </q-toolbar>
     </q-header>
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-            <!-- <div class="q-mt-md q-ml-md">
-                <q-btn dense flat round icon="lens" size="8.5px" color="red" />
-                <q-btn dense flat round icon="lens" size="8.5px" color="yellow" />
-                <q-btn dense flat round icon="lens" size="8.5px" color="green" />
-            </div> -->
             <q-list>
-                <!-- <div class="text-center q-py-md">
-                    <q-btn color="light-blue-8" icon="fas fa-cloud-upload-alt" label="Upload" class="q-px-lg"></q-btn>
-                </div> -->
                 <q-item clickable active-class="my-menu-link" v-ripple :active="link === 'profile'" @click="link = 'profile'">
                     <q-item-section avatar>
                         <q-icon name="person" />
@@ -138,16 +127,28 @@
     
 </template>
 <script>
-import {ref} from 'vue'
+import { useQuasar } from 'quasar'
+import {ref, onMounted} from 'vue'
     export default{
         name: 'SideBar',
 
         setup() {
+            const $q = useQuasar()
+            const showNotif = () => {
+            $q.notify({
+            message: 'Você tem 5 novas mensagens',
+            icon: 'announcement'
+            })
+        }
+        onMounted(()=>{
+            showNotif();
+        })
             return {
 
                 leftDrawerOpen: ref(true),
                 link: ref('profile'),
-                search: ref("")
+                search: ref(""),
+                showNotif
             }
         }
     }
